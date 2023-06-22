@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Ultimos productos</title>
+	<link rel="stylesheet" th:href="@{/css/home_styles.css}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="welcome">
+		<h1>Home</h1>
+		<p class="hello">Todos nuestros productos</p>
+		<a href="/nuevo"><button type="button" class="btn btn-primary">Nuevo Producto</button></a>
+	</div>
+	<div class="content">
+		<div class="product_content" th:each="product : ${products}">
+			<img th:src="@{/img/package.png}" alt="mi_idolo">
+			<p th:text="${product.idProducto}"></p>
+			<p class="title" th:text="${product.nomProducto}"></p>
+			<p th:text="${product.desProducto}"></p>
+			<p th:text="${product.fecProducto}"></p>
+		</div>
+	</div>
+
+</body>
+
+</html>
